@@ -1,0 +1,9 @@
+name: Output event details on issues
+
+on: issues
+jobs:
+  output-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output "issues" event details
+        run: echo "Triggered by ${{ toJSON(github.triggering_actor) }} \n ${{ toJSON(github.event)}}"
